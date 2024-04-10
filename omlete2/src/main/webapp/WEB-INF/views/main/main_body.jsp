@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 
 <%--	
 	ClientDTO loginClient = (ClientDTO)session.getAttribute("loginClient");
@@ -127,14 +128,19 @@
                   <div class="col-lg-12">
                      <h3>인기 TV1</h3>
                      <div class="view recent-slider recommended-slider">
+                     
+                     <c:forEach var="content" items="${contentsList}"> 
+                     
                         <div>
-                           <a href="product-detail.html">
-                           <img style="height: 300px" class="img-fluid" src="images/list/v1.png" />
+                           <a href="<c:url value='/detail/detail?no=${content.contentsNo }'/>">
+                           <img style="height: 382px" class="img-fluid" src="<c:out value='${content.contentsPoster }' />" />
                            </a>
-                           <div class="inner-slider"> 
-                                
+                           <div class="inner-slider">                                
                            </div> 
                         </div>
+                        
+                     </c:forEach>
+                                             
                      </div>
                   </div>
                </div>
@@ -149,6 +155,7 @@
                <div class="row">
                   <div class="col-lg-12">
                      <h3>인기 TV2</h3>
+                     
                      <div class="view recent-slider recommended-slider">
                         <div>
                            <a href="product-detail.html">
@@ -159,7 +166,9 @@
                            </div>
                         </div>
                      </div>
+                     
                   </div>
+                  
                </div>
             </div>
          </div>

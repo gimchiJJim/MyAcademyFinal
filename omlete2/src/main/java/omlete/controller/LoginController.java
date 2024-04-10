@@ -2,6 +2,7 @@ package omlete.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +18,8 @@ import omlete.service.MemberService;
 @RequiredArgsConstructor
 @RequestMapping("/login")
 public class LoginController {
-
+	
+	
 	private final MemberService memberService;
 
 	@RequestMapping(value = "/member", method = RequestMethod.GET)

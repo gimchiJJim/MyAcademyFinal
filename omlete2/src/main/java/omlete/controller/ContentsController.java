@@ -17,21 +17,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import omlete.dto.Contents;
 import omlete.service.ApiService;
 import omlete.service.ContentsService;
 
 @Controller
+@Slf4j
 @RequestMapping("/detail")
+@RequiredArgsConstructor
 public class ContentsController {
-	private final ContentsService contentsService = null;
-	private final ApiService apiService=null;
 	
-	//private ActorsService actorService;
+	private final ContentsService contentsService;
+	private final ApiService apiService;
 	
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(Model m, int no) {
-		
+		log.info("CONTENTS NO = {}", no);
 		Contents contents = contentsService.getContents(no);
 		m.addAttribute("contents", contents);
 		

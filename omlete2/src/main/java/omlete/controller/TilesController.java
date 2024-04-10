@@ -13,6 +13,7 @@ import omlete.service.ContentsService;
 
 @Controller
 public class TilesController {
+	/*
 	@Inject
 	private ContentsService contentsService;
 	
@@ -54,4 +55,5 @@ public class TilesController {
 	public String tiles8() {
 		return "admin/index";
 	}
+	*/
 }
